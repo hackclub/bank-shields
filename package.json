@@ -1,9 +1,9 @@
 {
-	"name": "express-typescript-simple-boilerplate",
+	"name": "bank-shields",
 	"version": "1.0.0",
-	"description": "The simple boilerplate for creating up a quick Express server with TypeScript",
+	"description": "Shields.io badges for Hack Club Bank",
 	"author": "Gary Tou <gary@garytou.com> (https://garytou.com)",
-	"repository": "https://github.com/garyhtou/express-typescript-simple-boilerplate",
+	"repository": "https://github.com/hackclub/bank-shields",
 	"main": "dist/index.js",
 	"scripts": {
 		"start": "npm run build && ts-node .",
