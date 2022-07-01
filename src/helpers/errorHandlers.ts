@@ -19,6 +19,10 @@ export default [
 		res: express.Response,
 		next: NextFunction
 	) => {
-		res.status(500).json({ error: 'A server error has occured.' });
+		res.status(500).json({
+			label: 'Hack Club Bank',
+			message: 'A server error has occured.',
+			isError: true,
+		});
 	},
 ];
