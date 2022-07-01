@@ -10,12 +10,20 @@ class Bank {
 		this.baseUrl = baseUrl;
 	}
 
-	async organization(id: string) {
-		const response = await this.request(
-			`${this.baseUrl}/organizations/${id}`,
-			'GET'
-		);
-		return response.data;
+	organization(id: string) {
+		const orgUrl = `${this.baseUrl}/organizations/${id}/`;
+		return {
+			get: async () => {
+				const response = await this.request(orgUrl, 'GET');
+				return response.data;
+			},
+			donations: {
+				list: async () => {
+					const response = await this.request(`${orgUrl}/donations`, 'GET');
+					return response.data;
+				},
+			},
+		};
 	}
 
 	private async request(endpoint: string, method = 'GET', params?: any) {

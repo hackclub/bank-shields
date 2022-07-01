@@ -22,7 +22,7 @@ router.get(
 	'/organizations/:orgId/balance',
 	shieldFor('Organization Balance', async (req: Request, res: Response) => {
 		const orgId = req.params.orgId;
-		const org = await bank.organization(orgId);
+		const org = await bank.organization(orgId).get();
 		const amount_cents = org.balances.balance_cents;
 
 		return {
@@ -33,6 +33,37 @@ router.get(
 				// NOTE: The logo is not rendering correctly in the badge
 				// logo: true,
 			},
+		};
+	})
+);
+
+router.get(
+	'/organizations/:orgId/donations/latest',
+	shieldFor('Latest Donation', async (req: Request, res: Response) => {
+		const orgId = req.params.orgId;
+		const donations = await bank.organization(orgId).donations.list();
+		if (!donations.length) {
+			const org = await bank.organization(orgId).get();
+			return {
+				label: org.name,
+				message: 'No donations just yet',
+				config: {
+					// NOTE: The logo is not rendering correctly in the badge
+					// logo: true,
+				},
+			};
+		}
+		console.log(donations);
+
+		// TODO: it's hard to get the latest donations from the Bank API.
+		// We need to add a `order_by` query
+		const latest = donations.at(-1);
+		const donorName = latest.donor.name;
+		const amount_cents = latest.amount_cents;
+		const msg = `${donorName} for ${formatMoney(amount_cents)}`;
+
+		return {
+			message: msg,
 		};
 	})
 );
@@ -62,6 +93,10 @@ function shieldFor(name: string, handle: Function) {
 			const config = shieldData.config;
 			delete shieldData.config;
 
+			if (typeof shieldData.label === 'undefined') {
+				shieldData.label = name;
+			}
+
 			res.json(shieldBase(shieldData, config));
 		} catch (e) {
 			const bankErrMsg = e?.response?.data?.message || e?.message;
@@ -82,7 +117,7 @@ function shieldFor(name: string, handle: Function) {
 		presets: {
 			logo?: boolean;
 		} = {
-			logo: true,
+			logo: false,
 		}
 	) {
 		let shield = {
