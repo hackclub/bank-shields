@@ -1,5 +1,6 @@
 import express, { Router, Request, Response } from 'express';
 import bank, { SVG_LOGO as BANK_ICON } from './utils/bank';
+const GITHUB_REPO_URL = 'https://github.com/hackclub/bank-shields';
 
 const router: Router = express.Router();
 
@@ -10,6 +11,11 @@ router.use(express.urlencoded({ extended: true }));
 // Ping Pong (test endpoint)
 router.get('/ping', (req: Request, res: Response) => {
 	res.send('pong! 🏓');
+});
+
+// Redirect root to GitHub Repo
+router.get('/', (req: Request, res: Response) => {
+	res.redirect(GITHUB_REPO_URL);
 });
 
 router.get(
