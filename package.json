@@ -6,7 +6,7 @@
 	"repository": "https://github.com/hackclub/bank-shields",
 	"main": "dist/index.js",
 	"scripts": {
-		"start": "npm run build && ts-node .",
+		"start": "ts-node .",
 		"build": "rimraf ./dist && tsc",
 		"dev": "ts-node-dev --respawn --pretty --transpile-only src/index.ts",
 		"lint": "tslint -c tslint.json -p tsconfig.json --fix",
