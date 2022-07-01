@@ -13,6 +13,14 @@ generating badges.
 - Website: https://shields.io/
 - GitHub: https://github.com/badges/shields
 
+## Badges
+
+### Organization Balance
+
+![Hack Club Bank Balance shield badge for HQ](https://img.shields.io/endpoint?url=https%3A%2F%2Fbank-shields.hackclub.com%2Forganizations%2Fhq%2Fbalance)
+
+Using the following URL: `https://img.shields.io/endpoint?url=https%3A%2F%2Fbank-shields.hackclub.com%2Forganizations%2F{INSERT YOUR ORGANIZATION'S ID OR SLUG HERE}%2Fbalance`
+
 ## Contribute
 
 ```sh
