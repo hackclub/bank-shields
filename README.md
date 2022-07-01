@@ -8,7 +8,7 @@ This repo contains the instructions for how to use Hack Club Bank shields.io
 badges as well as the server (Node/TypeScript) that serves the json data for
 generating badges.
 
-### About [sheilds.io](https://shields.io/)
+### About [shields.io](https://shields.io/)
 
 - Website: https://shields.io/
 - GitHub: https://github.com/badges/shields
