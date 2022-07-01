@@ -2,7 +2,7 @@
 
 Easily show your Hack Club Bank organization's balance using shields.io badges!
 
-TODO: insert hq badge
+![Hack Club Bank Balance shield badge for HQ](https://img.shields.io/endpoint?url=https%3A%2F%2Fbank-shields.hackclub.com%2Forganizations%2Fhq%2Fbalance)
 
 This repo contains the instructions for how to use Hack Club Bank shields.io
 badges as well as the server (Node/TypeScript) that serves the json data for
