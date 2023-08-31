@@ -1,10 +1,10 @@
-# Hack Club Bank [shields.io](https://shields.io/) Badges
+# HCB [shields.io](https://shields.io/) Badges
 
-Easily show your Hack Club Bank organization's balance using shields.io badges!
+Easily show your HCB organization's balance using shields.io badges!
 
-![Hack Club Bank Balance shield badge for HQ](https://img.shields.io/endpoint?url=https%3A%2F%2Fbank-shields.hackclub.com%2Forganizations%2Fhq%2Fbalance)
+![HCB Balance shield badge for HQ](https://img.shields.io/endpoint?url=https%3A%2F%2Fbank-shields.hackclub.com%2Forganizations%2Fhq%2Fbalance)
 
-This repo contains the instructions for how to use Hack Club Bank shields.io
+This repo contains the instructions for how to use HCB shields.io
 badges as well as the server (Node/TypeScript) that serves the json data for
 generating badges.
 
@@ -17,7 +17,7 @@ generating badges.
 
 ### Organization Balance
 
-![Hack Club Bank Balance shield badge for HQ](https://img.shields.io/endpoint?url=https%3A%2F%2Fbank-shields.hackclub.com%2Forganizations%2Fhq%2Fbalance)
+![HCB Balance shield badge for HQ](https://img.shields.io/endpoint?url=https%3A%2F%2Fbank-shields.hackclub.com%2Forganizations%2Fhq%2Fbalance)
 
 Using the following URL: `https://img.shields.io/endpoint?url=https%3A%2F%2Fbank-shields.hackclub.com%2Forganizations%2F{INSERT YOUR ORGANIZATION'S ID OR SLUG HERE}%2Fbalance`
 
