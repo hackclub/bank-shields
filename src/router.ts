@@ -30,8 +30,7 @@ router.get(
 			message: formatMoney(amount_cents),
 			color: amount_cents >= 0 ? 'green' : 'red',
 			config: {
-				// NOTE: The logo is not rendering correctly in the badge
-				// logo: true,
+				logo: true,
 			},
 		};
 	})
@@ -68,7 +67,7 @@ function shieldFor(name: string, handle: Function) {
 			console.log('Bank API Error:', bankErrMsg);
 			const code = 200; // dispite the API error, we'll still return a 200 so that the badge shows a friendly error message such as "Organization not found".
 			const errorResponse = {
-				label: name,
+				label: '',
 				message: bankErrMsg || 'An error has occured',
 				color: 'red',
 				isError: true,
