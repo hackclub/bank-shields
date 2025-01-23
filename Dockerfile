@@ -12,7 +12,7 @@ RUN yarn install
 RUN yarn build
 
 #Production stage
-FROM node:16-alpine AS production
+FROM node:20-alpine AS production
 
 WORKDIR /app
 
