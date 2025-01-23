@@ -8,6 +8,7 @@ RUN yarn
 
 COPY . .
 
+RUN yarn install
 RUN yarn build
 
 #Production stage
@@ -17,6 +18,7 @@ WORKDIR /app
 
 COPY package*.json .
 
+RUN yarn install
 RUN yarn build
 
 COPY --from=build /app/dist ./dist
