@@ -8,7 +8,7 @@ RUN yarn
 
 COPY . .
 
-RUN npm run build
+RUN yarn build
 
 #Production stage
 FROM node:16-alpine AS production
@@ -17,7 +17,7 @@ WORKDIR /app
 
 COPY package*.json .
 
-RUN yarn ci --only=production
+RUN yarn build
 
 COPY --from=build /app/dist ./dist
 
