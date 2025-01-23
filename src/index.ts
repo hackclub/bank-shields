@@ -8,7 +8,7 @@ import cors from 'cors';
 import router from './router';
 import errorHandlers from './helpers/errorHandlers';
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 4000;
 const app = express();
 
 // Secure app with HTTP headers
