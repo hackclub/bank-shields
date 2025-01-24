@@ -1,26 +1,13 @@
-FROM node:20-alpine AS build
+FROM node:20-alpine
 
 WORKDIR /app
 
 COPY package*.json .
 
-RUN yarn
+RUN yarn install
 
 COPY . .
 
-RUN yarn install
 RUN yarn build
-
-#Production stage
-FROM node:20-alpine AS production
-
-WORKDIR /app
-
-COPY package*.json .
-
-RUN yarn install
-RUN yarn build
-
-COPY --from=build /app/dist ./dist
 
 CMD ["node", "dist/index.js"]
