@@ -18,6 +18,14 @@ class Bank {
 		return response.data;
 	}
 
+	async stats() {
+		const response = await this.request(
+			`${this.baseUrl}/stats`,
+			'GET'
+		);
+		return response.data;
+	}
+
 	private async request(endpoint: string, method = 'GET', params?: any) {
 		return axios.request({
 			url: endpoint,
