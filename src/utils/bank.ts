@@ -3,7 +3,7 @@ import axios from 'axios';
 class Bank {
 	private readonly baseUrl: string;
 	constructor({
-		baseUrl = 'https://bank.hackclub.com/api/v3',
+		baseUrl = 'https://bank.hackclub.com',
 	}: {
 		baseUrl?: string;
 	} = {}) {
@@ -12,7 +12,7 @@ class Bank {
 
 	async organization(id: string) {
 		const response = await this.request(
-			`${this.baseUrl}/organizations/${id}`,
+			`${this.baseUrl}/api/v3/organizations/${id}`,
 			'GET'
 		);
 		return response.data;
