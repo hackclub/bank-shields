@@ -19,6 +19,23 @@ router.get('/', (req: Request, res: Response) => {
 });
 
 router.get(
+	'/total-transacted',
+	shieldFor('Total Transacted', async (req: Request, res: Response) => {
+		const stats = await bank.stats();
+		const amount_cents = stats.all.transactions_volume;
+
+		return {
+			label: org.name,
+			message: formatMoney(amount_cents),
+			color: amount_cents >= 0 ? 'green' : 'red',
+			config: {
+				logo: true,
+			},
+		};
+	})
+);
+
+router.get(
 	'/organizations/:orgId/balance',
 	shieldFor('Organization Balance', async (req: Request, res: Response) => {
 		const orgId = req.params.orgId;
